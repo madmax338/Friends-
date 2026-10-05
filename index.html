@@ -326,7 +326,7 @@ left:10px;
 right:10px;
 }
 
-/* LITTLE HEARTS AROUND BEAR */
+/* HEARTS AROUND BEAR */
 
 .bearHeart{
 position:absolute;
@@ -365,9 +365,11 @@ animation-delay:.5s;
 opacity:0;
 transform:scale(.2) translateY(80px);
 }
+
 70%{
 transform:scale(1.12) translateY(-8px);
 }
+
 100%{
 opacity:1;
 transform:scale(1) translateY(0);
@@ -378,12 +380,15 @@ transform:scale(1) translateY(0);
 0%,100%{
 transform:translateY(0) rotate(0deg);
 }
+
 25%{
 transform:translateY(-8px) rotate(-2deg);
 }
+
 50%{
 transform:translateY(0) rotate(0deg);
 }
+
 75%{
 transform:translateY(-5px) rotate(2deg);
 }
@@ -394,6 +399,7 @@ transform:translateY(-5px) rotate(2deg);
 transform:translateY(0) scale(.8);
 opacity:.5;
 }
+
 50%{
 transform:translateY(-10px) scale(1.15);
 opacity:1;
@@ -590,9 +596,11 @@ animation:fall linear forwards;
 transform:translateY(-50px) rotate(0deg) scale(.5);
 opacity:1;
 }
+
 50%{
 opacity:1;
 }
+
 100%{
 transform:translateY(110vh) rotate(720deg) scale(1.2);
 opacity:0;
@@ -604,6 +612,7 @@ from{
 opacity:0;
 transform:scale(.8);
 }
+
 to{
 opacity:1;
 transform:scale(1);
@@ -622,6 +631,7 @@ from{
 opacity:0;
 transform:scale(.8) translateY(20px);
 }
+
 to{
 opacity:1;
 transform:scale(1) translateY(0);
@@ -629,8 +639,13 @@ transform:scale(1) translateY(0);
 }
 
 @keyframes softPulse{
-0%,100%{transform:scale(1)}
-50%{transform:scale(1.08)}
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
 }
 
 #denied{
@@ -844,6 +859,8 @@ Forever ♾️
 
 <script>
 
+/* FRIEND DATA */
+
 const friends = {
 
 disha:{
@@ -862,8 +879,8 @@ message:
 "💬 “🌍 In a world of 7 continents, 🌎 195 countries, and 👥✨ over 8 billion people, somehow I got lucky enough to find you… 🥹💫 and even luckier to call you my friend. 🩷🌸🫶💕”"
 },
 
-arya:{
-name:"🌸 Arya (Aries) × Varad 🤍",
+aarya:{
+name:"🌸 Aarya (Aries) × Varad 🤍",
 
 qualities:[
 "🌿 • Calm",
@@ -887,12 +904,13 @@ let currentFriend="";
 
 function checkName(){
 
-const input=
+const input =
 document
 .getElementById("nameInput")
 .value
 .trim()
 .toLowerCase();
+
 
 if(!friends[input]){
 
@@ -933,6 +951,7 @@ Nice try though 😂
 
 document.body.appendChild(denied);
 
+
 setTimeout(()=>{
 
 denied.remove();
@@ -946,6 +965,7 @@ document.getElementById("entry").style.display="block";
 return;
 }
 
+
 currentFriend=input;
 
 document.getElementById("entry").style.display="none";
@@ -957,27 +977,29 @@ document.getElementById("question").style.display="block";
 
 /* NO BUTTON */
 
-const noButton=
+const noButton =
 document.getElementById("no");
 
 
 function moveNo(){
 
-const x=
-Math.random()*
-(window.innerWidth-noButton.offsetWidth-20);
+const x =
+Math.random() *
+(window.innerWidth - noButton.offsetWidth - 20);
 
-const y=
-Math.random()*
-(window.innerHeight-noButton.offsetHeight-20);
+const y =
+Math.random() *
+(window.innerHeight - noButton.offsetHeight - 20);
+
 
 noButton.style.position="fixed";
 
-noButton.style.left=
+noButton.style.left =
 Math.max(x,20)+"px";
 
-noButton.style.top=
+noButton.style.top =
 Math.max(y,20)+"px";
+
 }
 
 
@@ -994,13 +1016,16 @@ moveNo
 noButton.addEventListener(
 "touchstart",
 e=>{
+
 e.preventDefault();
+
 moveNo();
+
 }
 );
 
 
-/* MOUSE / KEYBOARD FOCUS */
+/* KEYBOARD FOCUS */
 
 noButton.addEventListener(
 "focus",
@@ -1033,17 +1058,18 @@ moveNo();
 );
 
 
-/* YES */
+/* YES BUTTON */
 
 function accepted(){
 
 document.getElementById("question").style.display="none";
 
-const friend=
+
+const friend =
 friends[currentFriend];
 
 
-/* NAME */
+/* FRIEND NAME */
 
 document.getElementById("friendName")
 .textContent=friend.name;
@@ -1057,14 +1083,15 @@ document.getElementById("message")
 
 /* QUALITIES */
 
-const qualityBox=
+const qualityBox =
 document.getElementById("qualities");
 
 qualityBox.innerHTML="";
 
+
 friend.qualities.forEach(q=>{
 
-const div=
+const div =
 document.createElement("div");
 
 div.textContent=q;
@@ -1076,10 +1103,11 @@ qualityBox.appendChild(div);
 
 /* SHOW CARD */
 
-const card=
+const card =
 document.getElementById("card");
 
 card.style.display="block";
+
 
 setTimeout(()=>{
 
@@ -1116,33 +1144,37 @@ const emojis=[
 "⭐"
 ];
 
+
 for(let i=0;i<100;i++){
 
-const particle=
+const particle =
 document.createElement("div");
 
 particle.className="particle";
 
-particle.textContent=
+particle.textContent =
 emojis[
 Math.floor(
 Math.random()*emojis.length
 )
 ];
 
-particle.style.left=
+
+particle.style.left =
 Math.random()*100+"vw";
 
-particle.style.fontSize=
+particle.style.fontSize =
 18+Math.random()*25+"px";
 
-particle.style.animationDuration=
+particle.style.animationDuration =
 2.5+Math.random()*3+"s";
 
-particle.style.animationDelay=
+particle.style.animationDelay =
 Math.random()*.8+"s";
 
+
 document.body.appendChild(particle);
+
 
 setTimeout(()=>{
 
@@ -1155,7 +1187,7 @@ particle.remove();
 }
 
 
-/* ENTER TO CONTINUE */
+/* ENTER KEY */
 
 document
 .getElementById("nameInput")
