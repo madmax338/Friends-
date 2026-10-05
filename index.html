@@ -24,8 +24,6 @@ align-items:center;
 overflow:hidden;
 }
 
-/* BACKGROUND DECOR */
-
 .decor{
 position:fixed;
 pointer-events:none;
@@ -195,8 +193,6 @@ animation:bearBounce 2.2s ease-in-out infinite;
 filter:drop-shadow(0 15px 18px rgba(120,50,70,.22));
 }
 
-/* EARS */
-
 .ear{
 position:absolute;
 width:48px;
@@ -218,15 +214,8 @@ left:11px;
 top:11px;
 }
 
-.ear.left{
-left:12px;
-}
-
-.ear.right{
-right:12px;
-}
-
-/* HEAD */
+.ear.left{left:12px}
+.ear.right{right:12px}
 
 .face{
 position:absolute;
@@ -241,8 +230,6 @@ box-shadow:
 inset -8px -10px 15px rgba(100,45,30,.12),
 inset 8px 8px 12px rgba(255,255,255,.16);
 }
-
-/* MUZZLE */
 
 .muzzle{
 position:absolute;
@@ -274,8 +261,6 @@ left:27px;
 top:21px;
 }
 
-/* EYES */
-
 .eye{
 position:absolute;
 width:12px;
@@ -286,13 +271,8 @@ top:42px;
 z-index:3;
 }
 
-.eye.left{
-left:27px;
-}
-
-.eye.right{
-right:27px;
-}
+.eye.left{left:27px}
+.eye.right{right:27px}
 
 .eye:after{
 content:"";
@@ -305,8 +285,6 @@ top:3px;
 left:3px;
 }
 
-/* CHEEKS */
-
 .cheek{
 position:absolute;
 width:18px;
@@ -318,15 +296,8 @@ top:68px;
 z-index:4;
 }
 
-.cheek.left{
-left:10px;
-}
-
-.cheek.right{
-right:10px;
-}
-
-/* HEARTS AROUND BEAR */
+.cheek.left{left:10px}
+.cheek.right{right:10px}
 
 .bearHeart{
 position:absolute;
@@ -334,42 +305,19 @@ font-size:22px;
 animation:miniHeart 1.8s ease-in-out infinite;
 }
 
-.bh1{
-left:5%;
-top:35%;
-animation-delay:.2s;
-}
-
-.bh2{
-right:5%;
-top:30%;
-animation-delay:.8s;
-}
-
-.bh3{
-left:18%;
-bottom:10%;
-font-size:17px;
-animation-delay:1.2s;
-}
-
-.bh4{
-right:18%;
-bottom:12%;
-font-size:17px;
-animation-delay:.5s;
-}
+.bh1{left:5%;top:35%;animation-delay:.2s}
+.bh2{right:5%;top:30%;animation-delay:.8s}
+.bh3{left:18%;bottom:10%;font-size:17px;animation-delay:1.2s}
+.bh4{right:18%;bottom:12%;font-size:17px;animation-delay:.5s}
 
 @keyframes bearPop{
 0%{
 opacity:0;
 transform:scale(.2) translateY(80px);
 }
-
 70%{
 transform:scale(1.12) translateY(-8px);
 }
-
 100%{
 opacity:1;
 transform:scale(1) translateY(0);
@@ -377,21 +325,10 @@ transform:scale(1) translateY(0);
 }
 
 @keyframes bearBounce{
-0%,100%{
-transform:translateY(0) rotate(0deg);
-}
-
-25%{
-transform:translateY(-8px) rotate(-2deg);
-}
-
-50%{
-transform:translateY(0) rotate(0deg);
-}
-
-75%{
-transform:translateY(-5px) rotate(2deg);
-}
+0%,100%{transform:translateY(0) rotate(0deg)}
+25%{transform:translateY(-8px) rotate(-2deg)}
+50%{transform:translateY(0) rotate(0deg)}
+75%{transform:translateY(-5px) rotate(2deg)}
 }
 
 @keyframes miniHeart{
@@ -399,7 +336,6 @@ transform:translateY(-5px) rotate(2deg);
 transform:translateY(0) scale(.8);
 opacity:.5;
 }
-
 50%{
 transform:translateY(-10px) scale(1.15);
 opacity:1;
@@ -412,8 +348,6 @@ font-size:30px;
 margin:0 0 35px;
 text-shadow:0 3px 10px rgba(160,30,90,.15);
 }
-
-/* BUTTONS */
 
 .buttons{
 position:relative;
@@ -581,8 +515,6 @@ font-size:20px;
 letter-spacing:4px;
 }
 
-/* PARTICLES */
-
 .particle{
 position:fixed;
 top:-50px;
@@ -596,11 +528,7 @@ animation:fall linear forwards;
 transform:translateY(-50px) rotate(0deg) scale(.5);
 opacity:1;
 }
-
-50%{
-opacity:1;
-}
-
+50%{opacity:1}
 100%{
 transform:translateY(110vh) rotate(720deg) scale(1.2);
 opacity:0;
@@ -612,7 +540,6 @@ from{
 opacity:0;
 transform:scale(.8);
 }
-
 to{
 opacity:1;
 transform:scale(1);
@@ -631,7 +558,6 @@ from{
 opacity:0;
 transform:scale(.8) translateY(20px);
 }
-
 to{
 opacity:1;
 transform:scale(1) translateY(0);
@@ -639,13 +565,8 @@ transform:scale(1) translateY(0);
 }
 
 @keyframes softPulse{
-0%,100%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.08);
-}
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.08)}
 }
 
 #denied{
@@ -655,15 +576,12 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:100;
-background:
-radial-gradient(
+background:radial-gradient(
 circle,
 rgba(255,255,255,.25),
 transparent 60%
 );
 }
-
-/* MOBILE */
 
 @media(max-width:500px){
 
@@ -704,8 +622,6 @@ font-size:22px;
 </head>
 
 <body>
-
-<!-- BACKGROUND -->
 
 <div class="decor flower f1">🌸</div>
 <div class="decor flower f2">🌷</div>
@@ -752,8 +668,6 @@ Continue 🩷
 
 <div id="question">
 
-<!-- BIG CUTE BEAR -->
-
 <div class="bearBox">
 
 <div class="bearHeart bh1">🩷</div>
@@ -784,7 +698,6 @@ Continue 🩷
 </div>
 
 </div>
-
 
 <h1>
 Do you like my friendship? 🩷
@@ -859,9 +772,7 @@ Forever ♾️
 
 <script>
 
-/* FRIEND DATA */
-
-const friends = {
+const friends={
 
 disha:{
 name:"🌸 Disha × Varad 🤍",
@@ -900,17 +811,11 @@ message:
 let currentFriend="";
 
 
-/* CHECK NAME */
-
 function checkName(){
 
-const input =
-document
-.getElementById("nameInput")
-.value
-.trim()
-.toLowerCase();
-
+const input=
+document.getElementById("nameInput")
+.value.trim().toLowerCase();
 
 if(!friends[input]){
 
@@ -922,24 +827,21 @@ denied.id="denied";
 
 denied.innerHTML=`
 
-<div
-style="
+<div style="
 text-align:center;
 color:#a91458;
 animation:appear .7s ease;
 padding:20px;
 ">
 
-<div
-style="
+<div style="
 font-size:32px;
 font-weight:bold;
 ">
 We are not friends 😭
 </div>
 
-<div
-style="
+<div style="
 font-size:18px;
 margin-top:12px;
 ">
@@ -950,7 +852,6 @@ Nice try though 😂
 `;
 
 document.body.appendChild(denied);
-
 
 setTimeout(()=>{
 
@@ -965,7 +866,6 @@ document.getElementById("entry").style.display="block";
 return;
 }
 
-
 currentFriend=input;
 
 document.getElementById("entry").style.display="none";
@@ -977,63 +877,45 @@ document.getElementById("question").style.display="block";
 
 /* NO BUTTON */
 
-const noButton =
-document.getElementById("no");
-
+const noButton=document.getElementById("no");
 
 function moveNo(){
 
-const x =
-Math.random() *
-(window.innerWidth - noButton.offsetWidth - 20);
+const x=
+Math.random()*
+(window.innerWidth-noButton.offsetWidth-20);
 
-const y =
-Math.random() *
-(window.innerHeight - noButton.offsetHeight - 20);
-
+const y=
+Math.random()*
+(window.innerHeight-noButton.offsetHeight-20);
 
 noButton.style.position="fixed";
 
-noButton.style.left =
+noButton.style.left=
 Math.max(x,20)+"px";
 
-noButton.style.top =
+noButton.style.top=
 Math.max(y,20)+"px";
 
 }
-
-
-/* DESKTOP */
 
 noButton.addEventListener(
 "mouseenter",
 moveNo
 );
 
-
-/* MOBILE */
-
 noButton.addEventListener(
 "touchstart",
 e=>{
-
 e.preventDefault();
-
 moveNo();
-
 }
 );
-
-
-/* KEYBOARD FOCUS */
 
 noButton.addEventListener(
 "focus",
 moveNo
 );
-
-
-/* KEYBOARD */
 
 noButton.addEventListener(
 "keydown",
@@ -1049,7 +931,6 @@ e.key==="ArrowRight"
 ){
 
 e.preventDefault();
-
 moveNo();
 
 }
@@ -1058,41 +939,28 @@ moveNo();
 );
 
 
-/* YES BUTTON */
+/* YES */
 
 function accepted(){
 
 document.getElementById("question").style.display="none";
 
-
-const friend =
-friends[currentFriend];
-
-
-/* FRIEND NAME */
+const friend=friends[currentFriend];
 
 document.getElementById("friendName")
 .textContent=friend.name;
 
-
-/* MESSAGE */
-
 document.getElementById("message")
 .textContent=friend.message;
 
-
-/* QUALITIES */
-
-const qualityBox =
+const qualityBox=
 document.getElementById("qualities");
 
 qualityBox.innerHTML="";
 
-
 friend.qualities.forEach(q=>{
 
-const div =
-document.createElement("div");
+const div=document.createElement("div");
 
 div.textContent=q;
 
@@ -1100,25 +968,16 @@ qualityBox.appendChild(div);
 
 });
 
-
-/* SHOW CARD */
-
-const card =
-document.getElementById("card");
+const card=document.getElementById("card");
 
 card.style.display="block";
-
 
 setTimeout(()=>{
 
 card.style.opacity="1";
-
 card.style.transform="scale(1)";
 
 },100);
-
-
-/* EMOJI BLAST */
 
 emojiBlast();
 
@@ -1144,42 +1003,35 @@ const emojis=[
 "⭐"
 ];
 
-
 for(let i=0;i<100;i++){
 
-const particle =
-document.createElement("div");
+const particle=document.createElement("div");
 
 particle.className="particle";
 
-particle.textContent =
+particle.textContent=
 emojis[
 Math.floor(
 Math.random()*emojis.length
 )
 ];
 
-
-particle.style.left =
+particle.style.left=
 Math.random()*100+"vw";
 
-particle.style.fontSize =
+particle.style.fontSize=
 18+Math.random()*25+"px";
 
-particle.style.animationDuration =
+particle.style.animationDuration=
 2.5+Math.random()*3+"s";
 
-particle.style.animationDelay =
+particle.style.animationDelay=
 Math.random()*.8+"s";
-
 
 document.body.appendChild(particle);
 
-
 setTimeout(()=>{
-
 particle.remove();
-
 },6000);
 
 }
@@ -1196,9 +1048,7 @@ document
 e=>{
 
 if(e.key==="Enter"){
-
 checkName();
-
 }
 
 }
